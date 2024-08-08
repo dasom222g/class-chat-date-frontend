@@ -6,20 +6,20 @@ export const initialUserInfo = {
     type: "male",
     text: "남자",
   },
-  bestSkill: "",
-  reason: "",
-  keywords: "",
+  name: "",
+  age: "",
+  mbti: null,
 };
 
 export const initialPartnerInfo = {
   id: 2,
   type: "partner",
-  startupStage: {
+  gender: {
     id: 1,
-    type: "pre",
-    text: "예비창업",
+    type: "male",
+    text: "남자",
   },
-  promotionMethod: "",
-  targetCustomer: "",
-  mainRevenue: "",
+  name: "",
+  age: "",
+  mbti: null,
 };

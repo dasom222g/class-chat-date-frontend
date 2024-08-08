@@ -8,7 +8,6 @@ import { genderList, infoContentList } from "../data/common";
 import { initialUserInfo } from "../data/initialState";
 import Input from "../components/Input";
 
-// 콘텐츠
 const UserInfo = ({ handleUserInfo }) => {
   // logic
   const history = useNavigate();
@@ -39,14 +38,13 @@ const UserInfo = ({ handleUserInfo }) => {
       {/* END:뒤로가기 버튼 */}
       <div className="h-full flex flex-col">
         {/* START:타이틀 영역 */}
-        <Title mainTitle={"당신의 콘텐츠를 알려주세요!"} />
+        <Title mainTitle={"당신을 알려주세요"} />
         {/* END:타이틀 영역 */}
         {/* START:info 영역 */}
         <form className="pt-20">
           {/* START:성별 체크 */}
           <RadioGroup
             items={genderList}
-            name="gender"
             defaultCheckedData={userInfo.gender}
             onChange={handleGenderData}
           />
