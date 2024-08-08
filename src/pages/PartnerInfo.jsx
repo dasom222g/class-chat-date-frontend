@@ -4,10 +4,11 @@ import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import PrevButton from "../components/PrevButton";
 import RadioGroup from "../components/RadioGroup";
-import { genderList, infoContentList } from "../data/common";
+import { infoBuisnessList, startupStageList } from "../data/common";
 import { initialPartnerInfo } from "../data/initialState";
 import Input from "../components/Input";
 
+// 사업
 const PartnerInfo = ({ handlePartnerInfo }) => {
   // logic
   const history = useNavigate();
@@ -19,8 +20,8 @@ const PartnerInfo = ({ handlePartnerInfo }) => {
     handlePartnerInfo(partnerInfo);
   };
 
-  const handleGenderData = (gender) => {
-    const resultData = { ...partnerInfo, gender };
+  const handleStartupStageData = (startupStage) => {
+    const resultData = { ...partnerInfo, startupStage };
     setPartnerInfo(resultData);
   };
 
@@ -38,20 +39,21 @@ const PartnerInfo = ({ handlePartnerInfo }) => {
       {/* END:뒤로가기 버튼 */}
       <div className="h-full flex flex-col">
         {/* START:타이틀 영역 */}
-        <Title mainTitle={"소개팅 상대 알려주세요"} />
+        <Title mainTitle={"나의 사업을 알려주세요!"} />
         {/* END:타이틀 영역 */}
         {/* START:info 영역 */}
         <form className="pt-20">
-          {/* START:성별 체크 */}
+          {/* START:예창,초창 체크 */}
           <RadioGroup
-            items={genderList}
-            defaultCheckedData={partnerInfo.gender}
-            onChange={handleGenderData}
+            items={startupStageList}
+            name="startupStage"
+            defaultCheckedData={partnerInfo.startupStage}
+            onChange={handleStartupStageData}
           />
-          {/* END:성별 체크 */}
+          {/* END:예창,초창 체크 */}
           {/* START:input 영역 */}
           <div>
-            {infoContentList.map((infoContent) => (
+            {infoBuisnessList.map((infoContent) => (
               <Input
                 key={infoContent.id}
                 label={infoContent.label}

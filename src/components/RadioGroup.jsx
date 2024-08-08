@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const RadioGroup = ({ items, defaultCheckedData, onChange }) => {
+const RadioGroup = ({ items, name, defaultCheckedData, onChange }) => {
   // logic
   const [value, setValue] = useState("");
 
@@ -24,7 +24,7 @@ const RadioGroup = ({ items, defaultCheckedData, onChange }) => {
             <input
               id={item.type}
               type="radio"
-              name="gender"
+              name={name}
               value={item.type}
               checked={value === item.type}
               className="hidden peer"

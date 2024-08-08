@@ -50,6 +50,9 @@ const Chat = ({ userInfo, partnerInfo }) => {
 
   const sendInfo = useCallback(async () => {
     setIsInfoLoading(true);
+    console.log("endpoint", endpoint);
+    console.log("userInfo", userInfo);
+    console.log("partnerInfo", partnerInfo);
     try {
       const response = await fetch(`${endpoint}/info`, {
         method: "POST",
@@ -58,6 +61,7 @@ const Chat = ({ userInfo, partnerInfo }) => {
       });
 
       const result = await response.json();
+      console.log("result", result);
       setInfoMessage(result.data);
     } catch (error) {
       console.error(error);
@@ -86,7 +90,7 @@ const Chat = ({ userInfo, partnerInfo }) => {
         {/* START:헤더 영역 */}
         <div className="-mx-6 -mt-10 py-7 bg-date-blue-600">
           <span className="block text-xl text-center text-white">
-            {partnerInfo.name}
+            {partnerInfo.startupStage.text}
           </span>
         </div>
         {/* END:헤더 영역 */}
